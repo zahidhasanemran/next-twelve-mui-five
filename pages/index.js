@@ -1,36 +1,22 @@
-import { Box, Button } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Link from "next/link";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
   const styles = useStyles();
 
   return (
-    <div className={styles.container}>
-      <Box boxShadow="">
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
-      </Box>
-      <Button type="primary" variant="contained">
-        Hello! Button
-      </Button>
-      Hello Mui Nextjs
+    <div>
+      <Container>
+        <Grid container spacing={5}>
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </Grid>
+      </Container>
     </div>
   );
 }
 
-const useStyles = makeStyles({
-  container: {
-    width: "100%",
-    background: "#000",
-  },
-});
+const useStyles = makeStyles({});

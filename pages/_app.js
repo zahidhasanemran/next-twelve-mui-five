@@ -3,6 +3,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "../styles/theme";
 import { useEffect } from "react";
 import Head from "next/head";
+import Layout from "../components/Layout";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -20,7 +22,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <CssBaseline />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
